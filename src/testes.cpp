@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -27,7 +28,7 @@ void prepareTestData() {
 	}
 }
 
-void doTests(std::string sortname) {
+void doTests(int sortname) {
 	int size = pow(10, MIN_POWER);
 	std::cout << "Start tests " << sortname << " ..." << std::endl;
 	// do tests
@@ -35,12 +36,33 @@ void doTests(std::string sortname) {
 		for (int j = 0; j < TRIES; j++) {
 			clock_t start, end;
 			start = clock();
+			switch (sortname) {
+
+			case SORT_BUBBLE:
+				bubblesort(dt[i][j], size);
+				break;
+
+			case SORT_HEAP:
+				heapsort(dt[i][j], size);
+				break;
+
+			case SORT_MERGE:
+				mergesort(dt[i][j], size);
+				break;
+
+
+
+			default:
+				break;
+			}
+			/*
 			if ("quick" == sortname)
 				quicksort(dt[i][j], size);
 			else if ("merge" == sortname)
 				mergesort(dt[i][j], size);
 			else
 				heapsort(dt[i][j], size);
+			*/
 
 			end = clock();
 
@@ -64,10 +86,10 @@ void cleanUp() {
 
 int main(int argc, const char* argv[]) {
 
-	std::string sortname = "quick";
+	int sortname = 2;
 
 	if (argc > 1)
-		sortname = argv[1];
+		sortname = std::stoi(argv[1]);
 
 	prepareTestData();
 
