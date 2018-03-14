@@ -50,9 +50,13 @@ void doTests(int sortname) {
 				mergesort(dt[i][j], size);
 				break;
 
-
+			case SORT_QUICK:
+				quicksort(dt[i][j], size);
+				break;
 
 			default:
+				// default sort is quicksort
+				quicksort(dt[i][j], size);
 				break;
 			}
 			/*
