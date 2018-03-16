@@ -1,4 +1,4 @@
-#include <algorithm>
+#include "../utils/util.hpp"
 
 template <class T>
 void gnomesort(T a[], size_t size) {
@@ -6,7 +6,7 @@ void gnomesort(T a[], size_t size) {
 		if (a[i - 1) <= a[i])
 			++i;
 		else {
-			std::swap(a[i - 1], a[i]);
+			swap(a[i - 1], a[i]);
 			--i;
 			if (i == 0)
 				i = 1;

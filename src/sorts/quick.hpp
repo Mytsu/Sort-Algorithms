@@ -1,13 +1,6 @@
 #include <cstdlib>
 
 template <class T>
-void swap(T& a, T& b) {
-	T t = b;
-	b = a;
-	a = t;
-}
-
-template <class T>
 void quicksort(T a[], size_t l, size_t h) {
 	if (h > l) {
 		// partition

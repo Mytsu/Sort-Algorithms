@@ -10,8 +10,8 @@
 #include "utils/util.hpp"
 
 const int TRIES = 1;
-const int MIN_POWER = 2;
-const int MAX_POWER = 5;
+const int MIN_POWER = 3;
+const int MAX_POWER = 6;
 int* dt[MAX_POWER - MIN_POWER + 1][TRIES];
 
 void prepareTestData() {
@@ -56,19 +56,15 @@ void doTests(int sortname) {
 				gnomesort(dt[i][j], size);
 				break;
 
+			case SORT_INSERTION:
+				insertionSort(dt[i][j], size);
+				break;
+
 			default:
 				// default sort is quicksort
 				quicksort(dt[i][j], size);
 				break;
 			}
-			/*
-			if ("quick" == sortname)
-				quicksort(dt[i][j], size);
-			else if ("merge" == sortname)
-				mergesort(dt[i][j], size);
-			else
-				heapsort(dt[i][j], size);
-			*/
 
 			end = clock();
 
