@@ -1,4 +1,3 @@
-
 template <class T>
 void bubblesort(T a[], size_t size) {
 	for (size_t i = size; i > 0; i--)

@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -7,8 +6,8 @@
 #include <cmath>
 #include <time.h>
 
-#include "utils/util.hpp"
 #include "sorts/sort.h"
+#include "utils/util.hpp"
 
 const int TRIES = 1;
 const int MIN_POWER = 2;
@@ -29,7 +28,7 @@ void prepareTestData() {
 }
 
 void doTests(int sortname) {
-	int size = pow(10, MIN_POWER);
+	size_t size = pow(10, MIN_POWER);
 	std::cout << "Start tests " << sortname << " ..." << std::endl;
 	// do tests
 	for (int i = MIN_POWER; i <= MAX_POWER; i++) {
@@ -37,7 +36,6 @@ void doTests(int sortname) {
 			clock_t start, end;
 			start = clock();
 			switch (sortname) {
-
 			case SORT_BUBBLE:
 				bubblesort(dt[i][j], size);
 				break;
@@ -52,6 +50,10 @@ void doTests(int sortname) {
 
 			case SORT_QUICK:
 				quicksort(dt[i][j], size);
+				break;
+
+			case SORT_GNOME:
+				gnomesort(dt[i][j], size);
 				break;
 
 			default:
@@ -72,7 +74,6 @@ void doTests(int sortname) {
 
 			std::cout << "Test " << j << " on " << size << " took " << std::setprecision(4) <<
 				(end - start) / CLOCKS_PER_SEC << " seconds" << std::endl;
-
 		}
 		size *= 10;
 	}
@@ -89,16 +90,12 @@ void cleanUp() {
 }
 
 int main(int argc, const char* argv[]) {
-
 	int sortname = 2;
-
 	if (argc > 1)
 		sortname = std::stoi(argv[1]);
 
 	prepareTestData();
-
 	doTests(sortname);
-
 	cleanUp();
 
 	return 0;

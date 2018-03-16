@@ -1,4 +1,3 @@
-
 template <class T>
 void mergesort(T a[], size_t l, size_t h) {
 	if (h - l == 1) {
@@ -9,7 +8,6 @@ void mergesort(T a[], size_t l, size_t h) {
 		}
 	}
 	else if (h == l) {
-
 	}
 	else if (h > l) {
 		size_t size = h - l + 1;

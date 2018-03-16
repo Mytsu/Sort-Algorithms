@@ -1,4 +1,3 @@
-
 template <class T>
 void max_heapify(T a[], size_t size, size_t i) {
 	size_t left = (i + 1) * 2 - 1;

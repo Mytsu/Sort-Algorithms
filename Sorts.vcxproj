@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="gnome.hpp" />
     <ClInclude Include="src/sorts/bubble.hpp" />
     <ClInclude Include="src/sorts/heap.hpp" />
     <ClInclude Include="src/sorts/merge.hpp" />
