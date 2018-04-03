@@ -35,6 +35,9 @@
     <ClInclude Include="gnome.hpp">
       <Filter>Sorts</Filter>
     </ClInclude>
+    <ClInclude Include="src\sorts\insertion.hpp">
+      <Filter>Sorts</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src/testes.cpp">

@@ -121,6 +121,7 @@
     <ClInclude Include="src/sorts/merge.hpp" />
     <ClInclude Include="src/sorts/quick.hpp" />
     <ClInclude Include="src/sorts/sort.h" />
+    <ClInclude Include="src\sorts\insertion.hpp" />
     <ClInclude Include="src\sorts\selection.hpp" />
   </ItemGroup>
   <ItemGroup>
